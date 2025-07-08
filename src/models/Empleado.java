@@ -1,6 +1,6 @@
 package models;
 
-public class Empleado {
+public class Empleado implements Comparable<Empleado> {
     private int id;
     private String name;
     private String position;
@@ -24,7 +24,28 @@ public class Empleado {
     }
 
     @Override
+    public int compareTo(Empleado otro) {
+        return Integer.compare(this.id, otro.id); // Orden por ID
+    }
+
+    @Override
     public String toString() {
         return "ID: " + id + ", Name: " + name + ", Position: " + position;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Empleado)) return false;
+        Empleado e = (Empleado) obj;
+        return id == e.id && name.equals(e.name) && position.equals(e.position);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Integer.hashCode(id);
+        result = 31 * result + name.hashCode();
+        result = 31 * result + position.hashCode();
+        return result;
     }
 }

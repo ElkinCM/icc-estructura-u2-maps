@@ -6,15 +6,18 @@ import models.Empleado;
 
 public class App {
     public static void main(String[] args) throws Exception {
-
+        Mapa mapa = new Mapa();
+        mapa.ejemploConHashMap();
+        mapa.ejemploConLinkedHashMap();
+        mapa.ejemploConTreeMap();
         // Ejecuta el ejemplo de uso de HashMap con ejemplos sencillos
         runMapExamlpe();
 
         // Ejecuta el ejemplo de gestión de empleados usando HashMap
-        runEmpleadoExample();
+        //runEmpleadoExample();
 
         // Ejecuta los ejercicios de sumatoria y anagramas
-        runEjerccios();
+        //runEjerccios();
     }
 
     private static void runEmpleadoExample() {
